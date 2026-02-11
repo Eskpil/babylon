@@ -277,6 +277,8 @@ pub const Window = struct {
 
         const aylin_shell = bindings.c.aylin_window_create(app.aylin_app, &Shell.vtable, shell);
 
+        bindings.c.aylin_window_request_dc_mode(aylin_shell, bindings.c.aylin_decoration_mode_server);
+
         shell.aylin_shell = aylin_shell;
 
         const self: Self = .{
